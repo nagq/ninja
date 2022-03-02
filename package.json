@@ -1,5 +1,5 @@
 {
-  "name": "@ninja/cli",
+  "name": "ninja-knife",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
