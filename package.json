@@ -1,0 +1,75 @@
+{
+  "name": "@ninja/cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "files": [
+    "lib/"
+  ],
+  "scripts": {},
+  "bin": {
+    "ninja": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nagq/ninja.git"
+  },
+  "keywords": [],
+  "author": "naguangqing",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nagq/ninja/issues"
+  },
+  "homepage": "https://github.com/nagq/ninja#readme",
+  "devDependencies": {
+    "@semantic-release/changelog": "5.0.1",
+    "@semantic-release/git": "9.0.1",
+    "@semantic-release/npm": "7.1.3"
+  },
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "commander": "^7.2.0",
+    "es6-promise": "^3.0.2",
+    "inquirer": "^8.1.0",
+    "open": "^8.2.0",
+    "shelljs": "^0.8.4",
+    "semantic-release": "^19.0.2"
+  },
+  "release": {
+    "branches": [
+      "release",
+      {
+        "name": "next",
+        "prerelease": "rc"
+      }
+    ],
+    "plugins": [
+      [
+        "@semantic-release/changelog",
+        {
+          "changelogFile": "CHANGELOG.md"
+        }
+      ],
+      "@semantic-release/npm",
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "CHANGELOG.md",
+            "package.json"
+          ]
+        }
+      ]
+    ],
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git"
+    ]
+  }
+}

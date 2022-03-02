@@ -1,0 +1,14 @@
+{
+    "config": {
+        "extends": [
+            "team"
+        ]
+    },
+    "data": [
+        {
+            "branch": "main",
+            "title": "主分支",
+            "team": "/url/to/team"
+        }
+    ]
+}
