@@ -18,5 +18,4 @@ ninja branch:  show branch and descriptions
         }
     ]
 }
-
 ```
