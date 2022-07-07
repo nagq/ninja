@@ -3,7 +3,7 @@
 
 ## ninja branch
 
-`npm install -g ninja-knife`
+`npm install -g ninja-branch`
 
 在一个git项目中运行 `ninja branch`, 命令会检查 `.git` 文件夹下是否有 `ninja-config.json`文件。
 
