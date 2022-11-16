@@ -15,21 +15,21 @@ with open(branch_file_path, 'r', encoding='utf8') as fp:
     if branch_data:
       branch_data = branch_data[0]
 
-      if 'scpoe' in branch_data:
-         scpoe = branch_data['scpoe']
-      elif 'team' in branch_data:
-        scpoe = branch_data['team'].split('/')[-1:][0]
+      if 'scope' in branch_data:
+         scope = branch_data['scope']
+      elif 'task' in branch_data:
+        scope = branch_data['task'].split('/')[-1:][0]
       else:
-        scpoe = ''
+        scope = ''
 
       format_msg = ''
       with open(commit_msg_filepath, 'r+') as fh:
         commit_msg = fh.read()
-        if '\nTeam: ' not in commit_msg:
+        if '\nTask: ' not in commit_msg:
           msgs = commit_msg.split(':')
           fh.seek(0, 0)
-          if scpoe:
-            format_msg = '%s(%s): %s\n%s\nTeam: %s' % (msgs[0], scpoe, msgs[1], branch_data['title'], branch_data['team'])
+          if scope:
+            format_msg = '%s(%s): %s\n%s\nTask: %s' % (msgs[0], scope, msgs[1], branch_data['title'], branch_data['task'])
           else:
             format_msg = '%s: %s\n%s' % (msgs[0], msgs[1], branch_data['title'])
           fh.write(format_msg)
